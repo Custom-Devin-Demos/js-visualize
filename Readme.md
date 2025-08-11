@@ -87,7 +87,7 @@ The simplest way to build documentation is to use `docker`:
 - execute 
   ```shell
     cd ./slatedocs
-    docker run --rm --name slate -v $(pwd)/build:/srv/slate/build -v $(pwd)/source:/srv/slate/source slatedocs/slate
+    docker run --rm --name slate -v $(pwd)/build:/srv/slate/build -v $(pwd)/source:/srv/slate/source slatedocs/slate:dev
   ```
   Build result will be generated to `slatedocs/build` folder.
 - Now open this file `slatedocs/build/index.html` - you should see your documentation 
@@ -100,7 +100,7 @@ The simplest way to build documentation is to use `docker`:
 - execute
   ```shell
     cd ./slatedocs
-    docker run --rm --name slate -p 4567:4567 -v $(pwd)/source:/srv/slate/source slatedocs/slate serve
+    docker run --rm --name slate -p 4567:4567 -v $(pwd)/source:/srv/slate/source slatedocs/slate:dev serve
   ```
 - Now open [http://127.0.0.1:4567](http://127.0.0.1:4567) - you should see documentation in your browser
 - Every time you will do changes in the `slatedocs/sources` folder - changes will be available in the browser after 
